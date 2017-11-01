@@ -1,0 +1,69 @@
+<binding xmlns:ns1="http://panyangbo.com/ehome" name="binding" package="com.panyangbo.ehome">
+  <namespace uri="" default="elements"/>
+   <mapping class="com.panyangbo.xxx.Message" name="PPVSPMessage" ordered="false">
+    <value style="element" name="Version" field="version" usage="optional"/>
+    <value style="element" name="Sequence" field="sequence" usage="optional"/>
+    <value style="element" name="CommandType" field="commandType" usage="optional"/>
+    <value style="element" name="Command" field="command" usage="optional"/>
+    <value style="element" name="Status" field="status" usage="optional"/>
+    <value style="element" name="Description" field="description" usage="optional"/>
+    <structure map-as="ns1:params" field="params" usage="optional" name="Params"/>
+  </mapping>
+  <mapping abstract="true" type-name="ns1:params" class="com.panyangbo.xxx.Params" ordered="false">
+  	<value style="element" name="HandleFlag" field="handleFlag" usage="optional"/>	
+    <value style="element" name="DeviceID" field="deviceID" usage="optional" set-method="setDeviceID"/>
+    <value style="element" name="TimeZone" field="timeZone" usage="optional"/>
+    <value style="element" name="Time" field="time" usage="optional"/>
+    <value style="element" name="DivisionEW" field="divisionEW" usage="optional"/>
+    <value style="element" name="Longitude" field="longitude" usage="optional" set-method="setLongitude"/>
+    <value style="element" name="DivisionNS" field="divisionNS" usage="optional"/>
+    <value style="element" name="Latitude" field="latitude" usage="optional" set-method="setLatitude"/>
+    <value style="element" name="Direction" field="direction" usage="optional" set-method="setDirection"/>
+    <value style="element" name="Speed" field="speed" usage="optional" set-method="setSpeed"/>
+    <value style="element" name="Satellites" field="satellites" usage="optional"/>
+    <value style="element" name="Precision" field="precision" usage="optional"/>
+    <value style="element" name="Height" field="height" usage="optional"/>
+    <value style="element" name="RetransFlag" field="retransFlag" usage="optional"/>
+    <value style="element" name="NeedsResponse" field="needsResponse" usage="optional"/>
+    <value style="element" name="Remark" field="remark" usage="optional"/>
+    <value style="element" name="Type" field="type" usage="optional"/>
+    <value style="element" name="RollAngle" field="rollAngle" usage="optional"/>
+    <value style="element" name="PitchAngle" field="pitchAngle" usage="optional"/>
+    <value style="element" name="YawAngle" field="yawAngle" usage="optional"/>
+    <value style="element" name="RelativeHeight" field="relativeHeight" usage="optional"/>
+    <value style="element" name="VerticalSpeed" field="verticalSpeed" usage="optional"/>
+    <value style="element" name="BatteryRemaining" field="batteryRemaining" usage="optional"/>
+    <value style="element" name="Action" field="action" usage="optional"/>
+    <value style="element" name="VideoChannel" field="videoChannel" usage="optional"/>
+    <value style="element" name="AlarmInChannel" field="alarmInChannel" usage="optional"/>
+    <value style="element" name="DiskNumber" field="diskNumber" usage="optional"/>
+    <value style="element" name="DeviceName" field="devicename" usage="optional" set-method="setDeviceName"/>
+    <value style="element" name="DeviceType" field="deviceType" usage="optional" set-method="setDeviceType"/>
+  </mapping>
+  <mapping class="com.panyangbo.xxx.Params" name="Params">
+    <structure map-as="ns1:params"/>
+  </mapping>
+  <mapping class="com.panyangbo.xxx.Gps" name="GPS">
+    <value style="element" name="Version" field="Version" usage="optional"/>
+    <value style="element" name="Protocol" field="Protocol" usage="optional"/>
+    <structure map-as="ns1:paramshx" field="Params" usage="optional" name="Params"/>
+  </mapping>
+  <mapping abstract="true" type-name="ns1:paramshx" class="com.panyangbo.xxx.Params4" ordered="false">
+   <value style="element" name="DepartmentId" field="DepartmentId" usage="optional"/>	
+   <value style="element" name="DepartmentName" field="DepartmentName" usage="optional"/>	
+   <value style="element" name="Phone" field="Phone" usage="optional"/>	
+   <value style="element" name="MacAddress" field="MacAddress" usage="optional"/>	
+   <value style="element" name="MobileIp" field="MobileIp" usage="optional"/>	
+   <value style="element" name="Type" field="type" usage="optional"/>
+   <value style="element" name="Name" field="Name" usage="optional"/>	
+   <value style="element" name="UserId" field="UserId" usage="optional"/>	
+   <value style="element" name="Longitude" field="Longitude" usage="optional"/>	
+   <value style="element" name="Latitude" field="Latitude" usage="optional"/>	
+   <value style="element" name="ReportTime" field="ReportTime" usage="optional"/>	
+   <value style="element" name="RealName" field="RealName" usage="optional"/>	
+   <value style="element" name="Remark" field="Remark" usage="optional"/>	
+  </mapping>
+  <mapping class="com.panyangbo.xxx.Params4" name="Params4HX">
+    <structure map-as="ns1:paramshx"/>
+  </mapping>
+</binding>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project default="main" basedir=".">
+    <path id="classpath">
+     	<dirset dir="${basedir}/target/classes" />
+        <fileset dir="E:\lib" includes="*.jar" />
+    </path>
+    <target name="main" depends="compile,bind" description="Main target" />
+    <target name="compile" description="Compilation target">
+        <echo message="Compiling Java source code"/>
+    	<javac fork="true" executable="C:\Program Files\Java\jdk1.7.0_75\bin\javac" srcdir="${basedir}/src/main/java" destdir="${basedir}/target/classes" debug="on" includeantruntime="true" />
+    </target>
+    <target name="bindgen">
+        <echo message="Running BindGen tool" />
+        <java classpathref="classpath" fork="true" failonerror="true" classname="org.jibx.binding.generator.BindGen">
+        	<arg value="-s"/>
+        	<arg value="${basedir}/src/main/java" />
+            <arg value="com.panyangbo.xxx.Message" />
+        	<arg value="com.panyangbo.xxx.Params" />
+        	<arg value="com.panyangbo.xxx.Gps" />
+        </java>
+    </target>
+    <target name="bind">
+        <echo message="Running bind" />
+        <taskdef name="bind" classname="org.jibx.binding.ant.CompileTask">
+            <classpath refid="classpath"/>
+        </taskdef>
+        <bind binding="${basedir}/binding.xml">
+            <classpath refid="classpath"/>
+        </bind>
+    </target>
+</project>

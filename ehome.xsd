@@ -1,0 +1,78 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://panyangbo.com/ehome" elementFormDefault="qualified" targetNamespace="http://panyangbo.com/ehome">
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element type="xs:string" name="version" minOccurs="0"/>
+      <xs:element type="xs:string" name="sequence" minOccurs="0"/>
+      <xs:element type="xs:string" name="commandType" minOccurs="0"/>
+      <xs:element type="xs:string" name="command" minOccurs="0"/>
+      <xs:element type="tns:params" name="params" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GPS">
+    <xs:sequence>
+      <xs:element type="xs:string" name="version" minOccurs="0"/>
+      <xs:element type="xs:string" name="protocol" minOccurs="0"/>
+      <xs:element type="tns:hxparams" name="params" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element type="tns:customXml" name="customXml"/>
+  <xs:element type="tns:params" name="params"/>
+  <xs:complexType name="customXml">
+    <xs:sequence>
+      <xs:element type="xs:string" name="test1" minOccurs="0"/>
+      <xs:element type="xs:string" name="test2" minOccurs="0"/>
+      <xs:element type="xs:string" name="test3" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element type="tns:Message" name="Message"/>
+  <xs:element type="tns:GPS" name="GPS"/>
+  <xs:complexType name="params">
+    <xs:sequence>
+      <xs:element type="xs:string" name="handleFlag" minOccurs="0"/>
+      <xs:element type="xs:string" name="deviceID" minOccurs="0"/>
+      <xs:element type="xs:string" name="timeZone" minOccurs="0"/>
+      <xs:element type="xs:string" name="time" minOccurs="0"/>
+      <xs:element type="xs:string" name="divisionEW" minOccurs="0"/>
+      <xs:element type="xs:string" name="longitude" minOccurs="0"/>
+      <xs:element type="xs:string" name="divisionNS" minOccurs="0"/>
+      <xs:element type="xs:string" name="latitude" minOccurs="0"/>
+      <xs:element type="xs:string" name="direction" minOccurs="0"/>
+      <xs:element type="xs:string" name="speed" minOccurs="0"/>
+      <xs:element type="xs:string" name="satellites" minOccurs="0"/>
+      <xs:element type="xs:string" name="precision" minOccurs="0"/>
+      <xs:element type="xs:string" name="height" minOccurs="0"/>
+      <xs:element type="xs:string" name="retransFlag" minOccurs="0"/>
+      <xs:element type="xs:string" name="needsResponse" minOccurs="0"/>
+      <xs:element type="xs:string" name="remark" minOccurs="0"/>
+      <xs:element type="xs:string" name="type" minOccurs="0"/>
+      <xs:element type="xs:string" name="rollAngle" minOccurs="0"/>
+      <xs:element type="xs:string" name="pitchAngle" minOccurs="0"/>
+      <xs:element type="xs:string" name="yawAngle" minOccurs="0"/>
+      <xs:element type="xs:string" name="relativeHeight" minOccurs="0"/>
+      <xs:element type="xs:string" name="verticalSpeed" minOccurs="0"/>
+      <xs:element type="xs:string" name="batteryRemaining" minOccurs="0"/>
+      <xs:element type="xs:string" name="action" minOccurs="0"/>
+      <xs:element type="xs:string" name="videoChannel" minOccurs="0"/>
+      <xs:element type="xs:string" name="alarmInChannel" minOccurs="0"/>
+      <xs:element type="xs:string" name="diskNumber" minOccurs="0"/>
+      <xs:element type="xs:string" name="deviceName" minOccurs="0"/>
+      <xs:element type="xs:string" name="deviceType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+   <xs:complexType name="hxparams">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DepartmentId" minOccurs="0"/>
+      <xs:element type="xs:string" name="DepartmentName" minOccurs="0"/>
+      <xs:element type="xs:string" name="Phone" minOccurs="0"/>
+      <xs:element type="xs:string" name="MacAddress" minOccurs="0"/>
+      <xs:element type="xs:string" name="MobileIp" minOccurs="0"/>
+      <xs:element type="xs:string" name="longitude" minOccurs="0"/>
+      <xs:element type="xs:string" name="type" minOccurs="0"/>
+      <xs:element type="xs:string" name="Name" minOccurs="0"/>
+      <xs:element type="xs:string" name="UserId" minOccurs="0"/>
+      <xs:element type="xs:string" name="Longitude" minOccurs="0"/>
+      <xs:element type="xs:string" name="Latitude" minOccurs="0"/>
+      <xs:element type="xs:string" name="Remark" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
